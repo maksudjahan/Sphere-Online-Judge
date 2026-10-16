@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int t,i;
+cin>>t;
+while(t--){
+        int n,x;
+    cin>>n;
+    int a[n-1],r[n];
+    for(i=0;i<n-1;i++){
+        cin>>a[i];
+}
+r[0]=0;
+for(i=0;i<n-1;i++){
+    if(a[i]==0) {
+            r[i+1]=r[i];
+    }
+    if(a[i]==1) r[i+1]=r[i]+1;
+    if(a[i]==2) r[i+1]=r[i]-1;
+}
+int mn=r[0];
+for(i=0;i<n;i++){
+    if(mn>r[i]) mn=r[i];
+}
+int l=1-mn;
+for(i=0;i<n;i++){
+    cout<<r[i]+l<<" ";
+}
+cout<<'\n';
+}
+    return 0;
+}
